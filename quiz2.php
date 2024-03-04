@@ -1,0 +1,86 @@
+<html>
+<body>
+<head>
+<style>
+ body
+{
+ background-color:turquoise;
+}
+.m
+{
+ box-shadow:2px 2px 45px purple;
+ margin:200px;
+ padding:120px;
+ font-size:70px;
+}
+</style>
+</head>
+</body>
+</html>
+<?php
+$radio=$_POST['rb'];
+$radio1=$_POST['rb1'];
+$radio2=$_POST['rb2'];
+$radio3=$_POST['rb3'];
+$radio4=$_POST['rb4'];
+$radio5=$_POST['rb5'];
+$radio6=$_POST['rb6'];
+$radio7=$_POST['rb7'];
+$radio8=$_POST['rb8'];
+$radio9=$_POST['rb9'];
+$temp=0;
+ if($radio=="malware")
+{
+ ($temp++);
+}
+ if($radio1=="pop3")
+{
+ ($temp++);
+}
+if($radio2=="artificialintelligence")
+{
+ ($temp++);
+}
+if($radio3=="rasmuslerdorf")
+{
+ ($temp++);
+}
+if($radio4=="alankay")
+{
+ ($temp++);
+}
+if($radio5=="smalltalk")
+{
+ ($temp++);
+}
+if($radio6=="3")
+{
+ ($temp++);
+}
+if($radio7=="private")
+{
+ ($temp++);
+}
+if($radio8=="new")
+{
+ ($temp++);
+}
+if($radio9=="static")
+{
+ ($temp++);
+}
+if(isset($_POST['b']))
+{
+echo "<div class='m'>"."YOUR SCORE :".$temp."</div>";
+}
+
+?>
+
+<?php
+$con=mysqli_connect("localhost","root","","quizdet");
+if(isset($_POST['b']))
+{
+$p="insert into dquizz values ('$temp')";
+mysqli_query($con,$p);
+}
+?>
